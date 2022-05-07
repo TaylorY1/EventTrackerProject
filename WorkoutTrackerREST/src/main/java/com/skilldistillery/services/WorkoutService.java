@@ -11,4 +11,5 @@ public interface WorkoutService {
 	Workout findById(int workoutId);
 	boolean deleteById(int workoutId);
 	Workout createWorkout(Workout workout);
+	Workout updateWorkout(int workoutId, Workout workout);
 }

@@ -39,10 +39,6 @@ public class Workout {
 		return id == other.id && Objects.equals(workouts, other.workouts);
 	}
 
-	@Override
-	public String toString() {
-		return "Workout [id=" + id + ", name=" + workouts + "]";
-	}
 
 	public int getId() {
 		return id;
@@ -60,6 +56,10 @@ public class Workout {
 		this.workouts = name;
 	}
 	
+	@Override
+	public String toString() {
+		return "Workout [id=" + id + ", name=" + workouts + "]";
+	}
 	
 	
 }

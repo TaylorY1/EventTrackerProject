@@ -24,9 +24,9 @@ public class WorkoutServiceImpl implements WorkoutService {
 	public Workout findById(int workoutId) {
 		Workout workout = new Workout();
 		
-		Optional<Workout>woop= workoutRepo.findById(workoutId);
+		Optional<Workout>workoutOpt= workoutRepo.findById(workoutId);
 		
-		workout = woop.get();
+		workout = workoutOpt.get();
 		
 		return workout;
 		}
@@ -45,6 +45,15 @@ public class WorkoutServiceImpl implements WorkoutService {
 		workoutRepo.saveAndFlush(workout);
 		return workout;
 	}
-
+	public Workout updateWorkout(int id, Workout workout) {
+		Workout managedWorkout = new Workout();
+		Optional<Workout> workoutOpt = workoutRepo.findById(id);
+		
+		managedWorkout = workoutOpt.get();
+		
+		managedWorkout.setWorkouts(workout.getWorkouts());
+		workoutRepo.saveAndFlush(managedWorkout);
+		return managedWorkout;
+	}
 
 }
