@@ -52,6 +52,14 @@ public class WorkoutServiceImpl implements WorkoutService {
 		managedWorkout = workoutOpt.get();
 		
 		managedWorkout.setWorkouts(workout.getWorkouts());
+		managedWorkout.setPrimaryLifts(workout.getPrimaryLifts());
+		managedWorkout.setSets(workout.getSets());
+		managedWorkout.setRepetitions(workout.getRepetitions());
+		managedWorkout.setImplementsUsed(workout.getImplementsUsed());
+		managedWorkout.setAccessoryWork(workout.getAccessoryWork());
+		managedWorkout.setLengthOfSession(workout.getLengthOfSession());
+		
+		
 		workoutRepo.saveAndFlush(managedWorkout);
 		return managedWorkout;
 	}

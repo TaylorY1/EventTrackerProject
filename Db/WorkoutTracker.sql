@@ -23,6 +23,12 @@ DROP TABLE IF EXISTS `workout` ;
 CREATE TABLE IF NOT EXISTS `workout` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `workouts` VARCHAR(45) NULL,
+  `primary_lift` VARCHAR(45) NULL,
+  `sets` INT NULL,
+  `repetitions` INT NULL,
+  `implements_used` VARCHAR(100) NULL,
+  `accessory_work` VARCHAR(250) NULL,
+  `length_of_session` INT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -42,12 +48,12 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `workouttrackerdb`;
-INSERT INTO `workout` (`id`, `workouts`) VALUES (1, 'Upper Push');
-INSERT INTO `workout` (`id`, `workouts`) VALUES (2, 'Upper Pull');
-INSERT INTO `workout` (`id`, `workouts`) VALUES (3, 'Lower Push');
-INSERT INTO `workout` (`id`, `workouts`) VALUES (4, 'Lower Pull');
-INSERT INTO `workout` (`id`, `workouts`) VALUES (5, 'Endurance Work');
-INSERT INTO `workout` (`id`, `workouts`) VALUES (6, 'Recovery Work');
+INSERT INTO `workout` (`id`, `workouts`, `primary_lift`, `sets`, `repetitions`, `implements_used`, `accessory_work`, `length_of_session`) VALUES (1, 'Upper Push', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `workout` (`id`, `workouts`, `primary_lift`, `sets`, `repetitions`, `implements_used`, `accessory_work`, `length_of_session`) VALUES (2, 'Upper Pull', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `workout` (`id`, `workouts`, `primary_lift`, `sets`, `repetitions`, `implements_used`, `accessory_work`, `length_of_session`) VALUES (3, 'Lower Push', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `workout` (`id`, `workouts`, `primary_lift`, `sets`, `repetitions`, `implements_used`, `accessory_work`, `length_of_session`) VALUES (4, 'Lower Pull', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `workout` (`id`, `workouts`, `primary_lift`, `sets`, `repetitions`, `implements_used`, `accessory_work`, `length_of_session`) VALUES (5, 'Endurance Work', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `workout` (`id`, `workouts`, `primary_lift`, `sets`, `repetitions`, `implements_used`, `accessory_work`, `length_of_session`) VALUES (6, 'Recovery Work', NULL, NULL, NULL, NULL, NULL, NULL);
 
 COMMIT;
 

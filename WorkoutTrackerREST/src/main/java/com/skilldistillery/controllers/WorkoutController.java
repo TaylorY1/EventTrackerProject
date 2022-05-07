@@ -34,17 +34,6 @@ public class WorkoutController {
 		return woServ.findById(workoutId);
 	}
 
-	@DeleteMapping("workout/{workoutId}")
-	public void deleteComment(@PathVariable Integer workoutId,
-
-			HttpServletResponse res) {
-
-		if (woServ.deleteById(workoutId)) {
-			res.setStatus(204);
-		} else {
-			res.setStatus(404);
-		}
-	}
 
 	@PostMapping("workout/{workout}")
 	public Workout addWorkout(@RequestBody Workout workout) {
@@ -56,7 +45,7 @@ public class WorkoutController {
 		return workout;
 	}
 	@PutMapping("workout/{workoutId}")
-	public Workout addWorkout(@PathVariable Integer workoutId,
+	public Workout updateWorkout(@PathVariable Integer workoutId,
 			@RequestBody Workout workout) {
 //			HttpServletResponse res){
 		workout = woServ.updateWorkout(workoutId, workout);
@@ -64,5 +53,16 @@ public class WorkoutController {
 //			res.setStatus(404);
 //		}
 		return workout;
+	}
+	@DeleteMapping("workout/{workoutId}")
+	public void deleteComment(@PathVariable Integer workoutId,
+			
+			HttpServletResponse res) {
+		
+		if (woServ.deleteById(workoutId)) {
+			res.setStatus(204);
+		} else {
+			res.setStatus(404);
+		}
 	}
 }
