@@ -48,12 +48,12 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `workouttrackerdb`;
-INSERT INTO `workout` (`id`, `workouts`, `primary_lift`, `sets`, `repetitions`, `implements_used`, `accessory_work`, `length_of_session`) VALUES (1, 'Upper Push', NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `workout` (`id`, `workouts`, `primary_lift`, `sets`, `repetitions`, `implements_used`, `accessory_work`, `length_of_session`) VALUES (2, 'Upper Pull', NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `workout` (`id`, `workouts`, `primary_lift`, `sets`, `repetitions`, `implements_used`, `accessory_work`, `length_of_session`) VALUES (3, 'Lower Push', NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `workout` (`id`, `workouts`, `primary_lift`, `sets`, `repetitions`, `implements_used`, `accessory_work`, `length_of_session`) VALUES (4, 'Lower Pull', NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `workout` (`id`, `workouts`, `primary_lift`, `sets`, `repetitions`, `implements_used`, `accessory_work`, `length_of_session`) VALUES (5, 'Endurance Work', NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `workout` (`id`, `workouts`, `primary_lift`, `sets`, `repetitions`, `implements_used`, `accessory_work`, `length_of_session`) VALUES (6, 'Recovery Work', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `workout` (`id`, `workouts`, `primary_lift`, `sets`, `repetitions`, `implements_used`, `accessory_work`, `length_of_session`) VALUES (1, 'Upper Push', 'Bench Press', 4, 8, 'Barbell', 'Dips', 60);
+INSERT INTO `workout` (`id`, `workouts`, `primary_lift`, `sets`, `repetitions`, `implements_used`, `accessory_work`, `length_of_session`) VALUES (2, 'Upper Pull', 'Pendlay Rows', 3, 12, 'Dumbbells', 'Pullups', 52);
+INSERT INTO `workout` (`id`, `workouts`, `primary_lift`, `sets`, `repetitions`, `implements_used`, `accessory_work`, `length_of_session`) VALUES (3, 'Lower Push', 'Front Squats', 5, 5, 'Axle Bar', 'RDLs', 45);
+INSERT INTO `workout` (`id`, `workouts`, `primary_lift`, `sets`, `repetitions`, `implements_used`, `accessory_work`, `length_of_session`) VALUES (4, 'Lower Pull', 'Deadlifts', 3, 10, 'Trap Bar', 'Sissy Squats', 33);
+INSERT INTO `workout` (`id`, `workouts`, `primary_lift`, `sets`, `repetitions`, `implements_used`, `accessory_work`, `length_of_session`) VALUES (5, 'Endurance Work', 'none', 4, 12, 'Rowing Machine', 'Planks', 65);
+INSERT INTO `workout` (`id`, `workouts`, `primary_lift`, `sets`, `repetitions`, `implements_used`, `accessory_work`, `length_of_session`) VALUES (6, 'Recovery Work', 'none', 3, 30, 'Lacrosse Ball', 'Bretzel Stretch', 35);
 
 COMMIT;
 
