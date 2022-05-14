@@ -35,7 +35,7 @@ public class WorkoutController {
 	}
 
 
-	@PostMapping("workout/{workout}")
+	@PostMapping("workout")
 	public Workout addWorkout(@RequestBody Workout workout) {
 //			HttpServletResponse res){
 		workout = woServ.createWorkout(workout);

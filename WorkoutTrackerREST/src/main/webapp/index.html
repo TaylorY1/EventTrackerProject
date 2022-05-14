@@ -6,7 +6,53 @@
         <script src="js/eventFunctions.js" charset="utf-8"></script>
   </head>
   <body>
-   <h1>Workout Tracker!</h1>
+   <h1>Welcome To Workout Tracker!</h1>
+   
+    <form name="workoutForm">
+    <input type="number" name="workoutId">
+    <button name="lookup">Get Workout by Id</button>
+  </form>
+  
+  <h3>Show All Workouts</h3>
+	<form name="findAll">
+
+		<button name="findAll">Show All Workouts</button>
+	</form>
+<form name="deleteById">
+
+			<input type="text" name="workoutId">
+				
+			<button name="delete" >Delete a workout by ID</button>
+
+	</form>
+
+  <div id="output">
+    <div id="workoutData"></div>
+
+  </div>
+
+  <form name="createWorkoutForm" id="createWorkoutForm">
+    Workout Name: <input type="text" name="workout">
+    Primary Lift: <input type="text" name="primaryLift">
+    Sets: <input type="number" name="sets">
+    Repetitions: <input type="number" name="repetitions">
+    Implement Used: <input type="text" name="implementUsed">
+    Accessory Work: <input type="text" name="accessoryWork">
+    Length Of Session: <input type="number" name="lengthOfSession">
+    <button name="submit">Create</button>
+  </form>
+  
+  <form name="updateWorkoutForm" id="updateWorkoutForm">
+  	Id: <input type="text" name="workoutId">
+    Workout Name: <input type="text" name="workout">
+    Primary Lift: <input type="text" name="primaryLift">
+    Sets: <input type="number" name="sets">
+    Repetitions: <input type="number" name="repetitions">
+    Implement Used: <input type="text" name="implementUsed">
+    Accessory Work: <input type="text" name="accessoryWork">
+    Length Of Session: <input type="number" name="lengthOfSession">
+    <button name="submit">Update a Workout</button>
+  </form>
   
    
   </body>
