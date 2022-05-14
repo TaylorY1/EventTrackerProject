@@ -53,11 +53,11 @@ function init() {
 		let xhr = new XMLHttpRequest();
 		xhr.open('PUT', 'api/workout/' + document.updateWorkoutForm.workoutId.value, true);
 
-		xhr.setRequestHeader("Content-type", "application/json"); // Specify JSON request body
+		xhr.setRequestHeader("Content-type", "application/json");
 
 		xhr.onreadystatechange = function() {
 			if (xhr.readyState === 4) {
-				if (xhr.status == 200 || xhr.status == 201) { // Ok or Created
+				if (xhr.status == 200 || xhr.status == 201) { 
 					let workout = JSON.parse(xhr.responseText);
 					console.log(workout);
 					displayWorkout(workout);
