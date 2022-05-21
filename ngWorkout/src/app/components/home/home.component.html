@@ -1,1 +1,38 @@
-<p>home works!</p>
+<h1>Welcome to Workout Tracker!</h1>
+
+
+<table>
+    <thead>
+        <tr>
+            <td>Id</td><br>
+            <td>Workout Focus</td><br>
+            <td>Primary Lifts</td><br>
+            <td>Sets</td><br>
+            <td>Repetitions</td><br>
+            <td>Implements Used</td><br>
+            <td>Accessory Work</td><br>
+            <td>Length of Session</td><br>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let workout of workouts">
+            <td>{{workout.id}} </td><br>
+            <td>{{workout.workouts}} </td><br>
+            <td>{{workout.primaryLifts}} </td><br>
+            <td>{{workout.sets}} </td><br>
+            <td>{{workout.repetitions}} </td><br>
+            <td>{{workout.implementsUsed}} </td><br>
+            <td>{{workout.accessoryWork}} </td><br>
+            <td>{{workout.lengthOfSession}} </td><br>
+
+        </tr>
+    </tbody>
+</table>
+<form>
+    <!-- Workout Id: <input type="number" name="id" [(ngModel)]="newWorkout.id">
+    <br> -->
+    Workout Focus: <input type="text" name="workouts" [(ngModel)]="newWorkout.workouts"> <br> Primary Lift: <input type="text" name="primaryLifts" [(ngModel)]="newWorkout.primaryLifts"> <br> Sets: <input type="number" name="sets" [(ngModel)]="newWorkout.sets"><br>    Repitions: <input type="number" name="repetitions" [(ngModel)]="newWorkout.repetitions"><br> Implements Used: <input type="text" name="implementsUsed" [(ngModel)]="newWorkout.implementsUsed"><br> Accessory Work: <input type="text" name="accessoryWork"
+        [(ngModel)]="newWorkout.accessoryWork"><br> Length of Session: <input type="number" name="lengthOfSession" [(ngModel)]="newWorkout.lengthOfSession"><br>
+
+    <button (click)="createWorkout(newWorkout)">Submit</button>
+</form>

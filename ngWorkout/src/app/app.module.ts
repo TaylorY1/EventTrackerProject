@@ -15,15 +15,13 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
-    WorkoutsService,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule
-
-  ],
+    WorkoutsService
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
