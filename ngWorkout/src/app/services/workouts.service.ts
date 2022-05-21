@@ -30,4 +30,35 @@ export class WorkoutsService {
       })
     );
   }
+  update(updateWorkout: Workout) {
+    // if(updateTodo.completed) {
+    //   let tempDate = this.datePipe.transform(Date.now(), 'shortDate');
+    //   if(tempDate !== null){
+    //     updateTodo.completeDate = tempDate;
+    //   }
+    // } else {
+    //   updateTodo.completeDate = '';
+    // }
+    return this.http.put<Workout>((this.url + '/workout/' + updateWorkout.id), updateWorkout).pipe(
+      catchError((err: any) => {
+        console.log(err);
+        return throwError('KABOOM');
+      })
+    );
+  }
+
+  destroy(id: number) {
+    // for(let i = 0; i < this.todos.length; i++) {
+    //   if(this.todos[i].id === id) {
+    //     this.todos.splice(i, 1);
+    //   }
+    // }
+    return this.http.delete<boolean>(this.url + '/workout/' + id).pipe(
+      catchError((err: any) => {
+        console.log(err);
+        return throwError('KABOOM');
+      })
+    );
+  }
+
 }

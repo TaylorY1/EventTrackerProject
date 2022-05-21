@@ -16,6 +16,8 @@ export class HomeComponent implements OnInit {
 
   newWorkout: Workout = new Workout();
 
+  editWorkout: Workout | null = null;
+
   constructor(private workoutServ: WorkoutsService,  private route: ActivatedRoute,
     private router: Router) { }
 
@@ -43,7 +45,36 @@ export class HomeComponent implements OnInit {
 
   }
 
+  deleteWorkout(id: number) {
+    this.workoutServ.destroy(id).subscribe(
+      data => this.reload(),
+      err => console.log(err)
+    );
+  }
+  reload() {
+    this.workoutServ.index().subscribe(
+      data => this.workouts = data,
+      err => console.log(err)
+    );
+  }
+  updateWorkout(workout: Workout){
+    this.workoutServ.update(workout).subscribe(
+      data => {
+        this.reload();
+        this.selected = null;
+        this.editWorkout = null;
+      }
+    );
+  }
+  setEditWorkout(workout: Workout) {
+    this.selected = workout;
+    this.editWorkout = Object.assign({}, this.selected);
+  }
+  displayWorkout(workout: Workout) {
+    this.selected = workout;
+  }
 
-
-
+  displayTable(){
+    this.selected = null;
+  }
 }

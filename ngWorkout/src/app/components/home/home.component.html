@@ -24,6 +24,8 @@
             <td>{{workout.implementsUsed}} </td><br>
             <td>{{workout.accessoryWork}} </td><br>
             <td>{{workout.lengthOfSession}} </td><br>
+            <button (click)="deleteWorkout(workout.id)">Delete</button>
+            <button (click)="setEditWorkout(workout)">Edit</button>
 
         </tr>
     </tbody>
@@ -35,4 +37,28 @@
         [(ngModel)]="newWorkout.accessoryWork"><br> Length of Session: <input type="number" name="lengthOfSession" [(ngModel)]="newWorkout.lengthOfSession"><br>
 
     <button (click)="createWorkout(newWorkout)">Submit</button>
+</form>
+<form *ngIf="editWorkout">
+    <label for="name">Workout Name: </label>
+    <input type="text" name="name" [(ngModel)]="editWorkout.workouts">
+
+    <label for="primaryLifts">Primary Lift: </label>
+    <input type="text" name="primaryLifts" [(ngModel)]="editWorkout.primaryLifts">
+
+    <label for="sets">Sets: </label>
+    <input type="number" name="sets" [(ngModel)]="editWorkout.sets">
+
+    <label for="repetitions">Repetitions: </label>
+    <input type="number" name="repetitions" [(ngModel)]="editWorkout.repetitions">
+
+    <label for="implementsUsed">Implements Used: </label>
+    <input type="text" name="implementsUsed" [(ngModel)]="editWorkout.implementsUsed">
+
+    <label for="accessoryWork">Accessory Work: </label>
+    <input type="text" name="accessoryWork" [(ngModel)]="editWorkout.accessoryWork">
+
+    <label for="lengthOfSession">Length of Session: </label>
+    <input type="number" name="lengthOfSession " [(ngModel)]="editWorkout.lengthOfSession ">
+
+    <button (click)="updateWorkout(editWorkout) ">Submit</button>
 </form>
