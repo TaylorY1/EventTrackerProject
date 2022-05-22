@@ -77,4 +77,6 @@ export class HomeComponent implements OnInit {
   displayTable(){
     this.selected = null;
   }
+
+
 }
